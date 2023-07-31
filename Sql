@@ -1,0 +1,29 @@
+-- Create a table to store information about users
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    age INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert data into the table
+INSERT INTO users (first_name, last_name, email, age)
+VALUES ('John', 'Doe', 'john.doe@example.com', 30),
+       ('Jane', 'Smith', 'jane.smith@example.com', 25),
+       ('Michael', 'Johnson', 'michael.johnson@example.com', 40);
+
+-- Select all users from the table
+SELECT * FROM users;
+
+-- Update the age of a user
+UPDATE users
+SET age = 35
+WHERE user_id = 1;
+
+-- Delete a user from the table
+DELETE FROM users
+WHERE user_id = 3;
+
+
